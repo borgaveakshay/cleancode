@@ -17,12 +17,10 @@
         android:textSize="18sp"
         android:textStyle="bold"/>
 
-    <com.facebook.drawee.view.SimpleDraweeView
+    <ImageView
         android:id="@+id/news_image"
         android:layout_width="210dp"
         android:layout_height="140dp"
-        fresco:placeholderImage="@drawable/place_holder"
-        fresco:placeholderImageScaleType="centerCrop"
         android:layout_gravity="center"
         android:paddingBottom="10dp"/>
 
