@@ -1,4 +1,4 @@
-package s.com.data_layer
+package domain_layer.domain_entities
 
 data class MultimediaItem(val copyright: String = "",
                           val subtype: String = "",

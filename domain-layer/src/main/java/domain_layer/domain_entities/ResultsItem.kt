@@ -1,4 +1,4 @@
-package s.com.data_layer
+package domain_layer.domain_entities
 
 data class ResultsItem(val perFacet: List<String>?,
                        val subsection: String = "",

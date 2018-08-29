@@ -1,4 +1,4 @@
-package s.com.data_layer
+package domain_layer.domain_entities
 
 data class NewsModel(val copyright: String = "",
                      val lastUpdated: String = "",

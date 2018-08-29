@@ -23,4 +23,5 @@ public class ExampleInstrumentedTest {
 
         assertEquals("s.com.domain_layer.test", appContext.getPackageName());
     }
+
 }
