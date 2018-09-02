@@ -1,4 +1,4 @@
-package domain_layer.domain_entities
+package s.com.data_layer.dependencies.components.entities
 
 data class ResultsItem(val perFacet: List<String>?,
                        val subsection: String = "",
@@ -10,7 +10,7 @@ data class ResultsItem(val perFacet: List<String>?,
                        val desFacet: List<String>?,
                        val url: String = "",
                        val materialTypeFacet: String = "",
-                       val multimedia: List<MultimediaItem>?,
+                       val multimedia: Any?,
                        val geoFacet: List<String>?,
                        val updatedDate: String = "",
                        val createdDate: String = "",
