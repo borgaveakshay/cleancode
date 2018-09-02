@@ -22,13 +22,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        test.java.srcDirs += 'src/test/kotlin'
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+    }
 
 }
 
 dependencies {
     def lifecycle_version = "1.1.1"
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:28.0.0-rc01'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
@@ -37,6 +40,14 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.4.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
     implementation "android.arch.lifecycle:viewmodel:$lifecycle_version"
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    implementation 'com.google.dagger:dagger:2.13'
+    kapt 'com.google.dagger:dagger-compiler:2.13'
+    androidTestImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.4.0'
+    testImplementation 'org.mockito:mockito-core:2.15.0'
+    androidTestImplementation 'org.mockito:mockito-android:2.8.47'
+    implementation project(':domain-layer')
 }
 repositories {
     mavenCentral()
