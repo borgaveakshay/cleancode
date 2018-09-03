@@ -7,6 +7,9 @@ import io.reactivex.Observable
 import s.com.data_layer.dependencies.components.api.Api
 import s.com.data_layer.dependencies.components.entities.ResultsItem
 
+/**
+ * NewsDataStore implementation class
+ */
 class NewsDataStoreImpl(private val api: Api
                         , private val newsModelToNewsEntity: Mapper<ResultsItem, NewsEntity>) : NewsDataStore {
 

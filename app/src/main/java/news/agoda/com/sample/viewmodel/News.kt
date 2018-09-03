@@ -4,6 +4,9 @@ import android.arch.lifecycle.ViewModel
 import android.os.Parcel
 import android.os.Parcelable
 
+/**
+ * Data class for News
+ */
 data class News(var title: String? = "",
                 var articleUrl: String? = "",
                 var caption: String? = "",

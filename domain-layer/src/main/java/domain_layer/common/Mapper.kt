@@ -2,6 +2,10 @@ package domain_layer.common
 
 import io.reactivex.Observable
 
+/**
+ * This template class can be extended to convert entity object from one to another
+ */
+
 abstract class Mapper<in T, E> {
 
     abstract fun mapFrom(from: T): E

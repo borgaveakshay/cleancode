@@ -7,6 +7,9 @@ import news.agoda.com.sample.databinding.ListItemNewsBinding
 import news.agoda.com.sample.viewmodel.News
 import javax.inject.Inject
 
+/**
+ * CustomRecyclerAdapter extension for news adapter implementation
+ */
 class NewsAdapter @Inject constructor(newsList: List<News>
                                       , val requestManager: RequestManager) : CustomRecyclerView<News, ListItemNewsBinding>(newsList, R.layout.list_item_news) {
 

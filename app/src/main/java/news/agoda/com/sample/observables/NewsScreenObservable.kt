@@ -10,6 +10,9 @@ import news.agoda.com.sample.adapters.NewsAdapter
 import news.agoda.com.sample.viewmodel.News
 import javax.inject.Inject
 
+/**
+ * News Screen Observable class
+ */
 class NewsScreenObservable @Inject constructor(val newsUseCase: NewsUseCase,
                                                val newsMapper: Mapper<NewsEntity, News>
                                                , val newsAdapter: NewsAdapter

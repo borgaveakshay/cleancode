@@ -9,6 +9,10 @@ import s.com.data_layer.dependencies.components.api.Api
 import s.com.data_layer.dependencies.components.datastore.NewsDataStoreImpl
 import s.com.data_layer.dependencies.components.entities.ResultsItem
 
+/**
+ * NewsRepository Implementation class
+ */
+
 class NewsRepositoryImpl(api: Api,
                          resultToNewsEntity: Mapper<ResultsItem, NewsEntity>) : NewsRepository {
 

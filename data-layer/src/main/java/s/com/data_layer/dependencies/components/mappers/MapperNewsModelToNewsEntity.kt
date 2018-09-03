@@ -7,6 +7,9 @@ import domain_layer.domain_entities.NewsEntity
 import s.com.data_layer.dependencies.components.entities.ResultsItem
 import javax.inject.Inject
 
+/**
+ * Mapper converter implementation from ResultItem to NewsEntity
+ */
 class MapperNewsModelToNewsEntity @Inject constructor() : Mapper<ResultsItem, NewsEntity>() {
 
     override fun mapFrom(from: ResultsItem): NewsEntity {
@@ -30,9 +33,6 @@ class MapperNewsModelToNewsEntity @Inject constructor() : Mapper<ResultsItem, Ne
 
                     val item = it.get(0) as LinkedTreeMap<String, String>
                     newsEntity.thumbUrl = item.get("url")
-                    //val item: MultimediaItem = Gson().fromJson(it.get(0), MultimediaItem::class.java)
-
-                    // val item: List<MultimediaItem> = Gson().fromJson(it.toString(), MutableList<MultimediaItem>::class.java).toList()
 
                 }
             }
