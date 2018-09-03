@@ -5,9 +5,10 @@ import com.bumptech.glide.request.RequestOptions
 import news.agoda.com.sample.R
 import news.agoda.com.sample.databinding.ListItemNewsBinding
 import news.agoda.com.sample.viewmodel.News
+import javax.inject.Inject
 
-class NewsAdapter(val newsList: MutableList<News>
-                  , val layoutId: Int, val requestManager: RequestManager) : CustomRecyclerView<News, ListItemNewsBinding>(newsList, layoutId) {
+class NewsAdapter @Inject constructor(newsList: List<News>
+                                      , val requestManager: RequestManager) : CustomRecyclerView<News, ListItemNewsBinding>(newsList, R.layout.list_item_news) {
 
     override fun onBindView(stateBinding: ListItemNewsBinding?, position: Int) {
 

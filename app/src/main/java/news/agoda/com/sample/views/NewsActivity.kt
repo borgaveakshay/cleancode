@@ -30,8 +30,8 @@ class NewsActivity : AppCompatActivity() {
                 .appModule(AppModule(this))
                 .build()
         mNewsScreenObservable = mAppComponent.getNewsScreenObservable()
-        mNewsActivityBinding.newsObserver = mNewsScreenObservable
-        mAppComponent.getNewsAdapter().setOnItemClickListener { news ->
+
+        mNewsScreenObservable.newsAdapter.setOnItemClickListener { news ->
 
             val detailActivity = Intent(this@NewsActivity, NewsDetailActivity::class.java)
             val bundle = Bundle()
@@ -40,7 +40,8 @@ class NewsActivity : AppCompatActivity() {
             startActivity(detailActivity)
         }
         mNewsActivityBinding.list.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL))
-        mNewsActivityBinding.list.adapter = mAppComponent.getNewsAdapter()
+        mNewsActivityBinding.newsObserver = mNewsScreenObservable
+        mNewsActivityBinding.list.adapter = mNewsScreenObservable.newsAdapter
         mNewsScreenObservable.getNews()
 
     }

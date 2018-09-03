@@ -1,6 +1,7 @@
 package s.com.data_layer.dependencies.components.mappers
 
 import android.util.Log
+import com.google.gson.internal.LinkedTreeMap
 import domain_layer.common.Mapper
 import domain_layer.domain_entities.NewsEntity
 import s.com.data_layer.dependencies.components.entities.ResultsItem
@@ -17,7 +18,7 @@ class MapperNewsModelToNewsEntity @Inject constructor() : Mapper<ResultsItem, Ne
             newsEntity.title = from.title
             newsEntity.articleUrl = from.url
             newsEntity.abstract = from.abstract
-            newsEntity.thumbUrl = from.url
+
             /*
             * Some of the MultiMedia parameter value coming as empty string and few of them are list
             * */
@@ -26,6 +27,9 @@ class MapperNewsModelToNewsEntity @Inject constructor() : Mapper<ResultsItem, Ne
                 if (it is List<*>) {
 
                     Log.i("multimedia: ", it.toString())
+
+                    val item = it.get(0) as LinkedTreeMap<String, String>
+                    newsEntity.thumbUrl = item.get("url")
                     //val item: MultimediaItem = Gson().fromJson(it.get(0), MultimediaItem::class.java)
 
                     // val item: List<MultimediaItem> = Gson().fromJson(it.toString(), MutableList<MultimediaItem>::class.java).toList()
