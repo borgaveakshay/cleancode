@@ -18,23 +18,19 @@ class NewsDetailActivity : AppCompatActivity() {
     var mNews: News? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        if (intent != null) mNews = intent.extras?.getParcelable("news")
-
         mNewsDetailBinding = DataBindingUtil.setContentView(this, R.layout.activity_news_detail)
-        mNewsDetailBinding.news = mNews
 
+        intent.let {
+            mNews = it.extras?.getParcelable("news")
+            mNewsDetailBinding.news = mNews
+        }
         Glide.with(this)
                 .load(mNews?.thumbUrl)
                 .apply(RequestOptions().placeholder(R.drawable.place_holder))
                 .into(mNewsDetailBinding.newsImage)
-
-
     }
 
-
     fun onFullStoryClicked(view: View) {
-
         val intent = Intent(Intent.ACTION_VIEW)
         intent.setData(Uri.parse(mNews?.articleUrl))
         startActivity(intent)
