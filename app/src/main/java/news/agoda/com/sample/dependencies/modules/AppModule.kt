@@ -38,9 +38,6 @@ class AppModule(private val newsActivity: NewsActivity) {
     @AppScope
     fun getGlideImageLoader(newsActivity: NewsActivity): RequestManager = Glide.with(newsActivity)
 
-//    @Provides
-//    @AppScope
-//    fun getNewsAdapter(requestManager: RequestManager, newsList: List<News>): NewsAdapter = NewsAdapter(newsList, R.layout.list_item_news, requestManager)
 
 
 }
