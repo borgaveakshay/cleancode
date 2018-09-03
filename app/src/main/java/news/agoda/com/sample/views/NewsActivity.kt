@@ -39,9 +39,10 @@ class NewsActivity : AppCompatActivity() {
             detailActivity.putExtras(bundle)
             startActivity(detailActivity)
         }
-        mNewsActivityBinding.list.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL))
+        mNewsActivityBinding.list.addItemDecoration(DividerItemDecoration(this, LinearLayoutManager.VERTICAL))
         mNewsActivityBinding.newsObserver = mNewsScreenObservable
         mNewsActivityBinding.list.adapter = mNewsScreenObservable.newsAdapter
+
         mNewsScreenObservable.getNews()
 
     }

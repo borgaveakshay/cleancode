@@ -1,6 +1,7 @@
 package news.agoda.com.sample.adapters
 
 import com.bumptech.glide.RequestManager
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import news.agoda.com.sample.R
 import news.agoda.com.sample.databinding.ListItemNewsBinding
@@ -18,7 +19,8 @@ class NewsAdapter @Inject constructor(newsList: List<News>
         stateBinding?.newsModel = dataList.get(position)
         requestManager
                 .load(dataList.get(position).thumbUrl)
-                .apply(RequestOptions().placeholder(R.drawable.place_holder))
+                .apply(RequestOptions().placeholder(R.drawable.place_holder)
+                        .diskCacheStrategy(DiskCacheStrategy.ALL))
                 .into(stateBinding?.newsItemImage!!)
 
 
